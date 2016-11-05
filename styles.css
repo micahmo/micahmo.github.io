@@ -1,3 +1,112 @@
 body {
-    background-color: darkslategray;
+    padding: 0em;
+    margin: 0em;    
+}
+
+h1 {
+    color: white;
+    font-size: 2.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    color: white;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    color: #00002B;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* main content */
+.content {
+    padding-top: 1em;
+}
+.content h1 {
+    color: #0F628E;
+}
+.content #logo {
+    padding: .5em;
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content #profile {
+    margin-top: -5em;
+    margin-bottom: -5em;
+}
+
+.section-light {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    padding-left: 15em;
+    padding-right: 15em;
+    background-color: #E1E1E1;
+}
+
+.section-dark {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    padding-left: 15em;
+    padding-right: 15em;
+    background-color: #D2D2D2;
+}
+
+/* Nav bar stuff */
+.nav {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0em .75em .75em -.75em black;
+}
+
+
+.nav ul {
+    list-style: none;
+    background-color: #444;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.nav li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #888;
+}
+.nav a {
+    text-decoration: none;
+    color: gray;
+    display: block;
+    transition: .3s background-color;
+}
+.nav a:hover {
+    color: white;
+    background-color: #0F628E;
+}
+.nav a.active {
+    color: white;
+    cursor: default;
+}
+@media screen and (min-width: 600px) {
+    .nav li {
+        width: 150px;
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+    }
+    .nav li {
+        display: inline-block;
+        margin-right: -4px;
+    }
 }

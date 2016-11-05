@@ -2,12 +2,105 @@
 <html>
 
 <head>
-    <title>Micah Morrison • Micah Morrison</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Micah Morrison &#9679 Software Developer</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+
+    <!--Icon Stuff-->
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="icon/manifest.json">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 
 <body>
-    The content of the document......
-</body>
 
+    
+    
+    <header>
+        <div id="nav" class="nav maximized-nav">
+            <ul>
+                <li class="home"><a id="home-nav" class="active" href="#">Home</a></li>
+                <li class="about"><a id="about-nav" href="#about">About</a></li>
+                <li class="skills"><a id="skills-nav" href="#skills">Skills</a></li>
+                <li class="experience"><a id="experience-nav" href="#">Experience</a></li>
+                <li class="contact"><a id="contact-nav" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+<div class="content">
+        
+        <div class="section-light">
+            <img id="logo" src="images/logo_header.png"/>
+
+            <img id="profile" src="images/profile_round.png" align="right"/>
+            
+            <section class="about-waypoint"/>
+            <a name="about"/>
+            <h1>About</h1>
+            <p>I am a hardworking, detail-oriented problem solver. My rigorous organization skills allow me to maximize my time, prioritize my work, and get things done. My attention to detail forces me to examine every aspect of a problem until I have created the optimal solution. I have excellent written and oral communication skills and thrive on teamwork.
+            </p>
+        </div>
+
+        <div class="section-dark">
+            <section class="skills-waypoint"/>
+            <a name="skills"/>
+            <h1>Skills</h1>
+
+            <p>Cras vehicula nisi eget quam tempor porttitor. Morbi posuere quam tellus, et eleifend ligula varius ac. Vivamus id sollicitudin augue, ut pellentesque purus. Nulla facilisi. Nam lobortis sit amet mi at faucibus. Donec aliquet metus eu ipsum laoreet lobortis. Suspendisse imperdiet hendrerit libero nec sagittis. Nullam gravida ultricies cursus.
+
+            Phasellus semper, purus non maximus accumsan, diam lorem tempus massa, vel dignissim nulla nisl eu nibh. Phasellus tempus ipsum leo, in dictum ligula malesuada dapibus. Aliquam eget odio in massa lacinia volutpat quis quis nunc. Duis maximus purus quis viverra laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed maximus dui in cursus dapibus. Nulla sollicitudin urna in dolor rhoncus, vitae rutrum diam aliquet. Etiam accumsan augue eget sapien maximus efficitur. Etiam facilisis arcu vel ultricies sollicitudin. Cras in orci et dolor gravida venenatis. Sed eu ante scelerisque, posuere elit in, interdum risus. Mauris nec ultrices ligula.
+            </p>
+        </div>
+
+        <div class="section-light">
+            <p>Nulla finibus dignissim risus ac tempor. Ut condimentum metus nec rhoncus fermentum. Aenean scelerisque lacinia justo at mattis. Vivamus eu facilisis massa. Nam sollicitudin suscipit magna nec condimentum. Nulla blandit semper lorem vitae viverra. Duis lobortis ut mauris eget condimentum. Praesent sagittis lacinia mi, sit amet dignissim mi condimentum et. Nunc ut rutrum sem. Nam augue nunc, viverra sed eleifend quis, consequat consectetur metus. In scelerisque suscipit nisl, eu eleifend turpis vestibulum eu. Nullam suscipit massa at consequat euismod. Aliquam et leo porta, volutpat dolor eget, egestas arcu. Quisque ut magna a mauris finibus semper et in nunc. Nunc a ante urna.
+            </p>
+        </div>
+
+    </div>
+
+    <!--Minimize nav and intro bars-->
+    <script>
+		var $home_nav = $( '#home-nav' );
+        var $about_nav = $( '#about-nav' );
+        var $skills_nav = $( '#skills-nav' );
+        // var $nav = $( '#nav' );
+		$( '.about-waypoint' ).each( function(i) {
+			var $el = $( this );
+			$el.waypoint( function( direction ) {
+				if( direction === 'down') {
+					$home_nav.attr('class', '');
+                    $about_nav.attr('class', 'active');
+				}
+				else if( direction === 'up') {
+					$home_nav.attr('class', 'active');
+                    $about_nav.attr('class', '');                   
+				}
+			}, { offset: '25%' } );
+		} );
+
+        $( '.skills-waypoint' ).each( function(i) {
+			var $el = $( this );
+			$el.waypoint( function( direction ) {
+				if( direction === 'down') {
+                    $about_nav.attr('class', '');
+                    $skills_nav.attr('class', 'active');
+				}
+				else if( direction === 'up') {
+					$skills_nav.attr('class', '');   
+				}
+			}, { offset: '25%' } );
+		} );
+    </script>
+
+
+</body>
 </html>
