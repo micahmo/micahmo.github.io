@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="icon/manifest.json">
     <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#0F628E" /> <!--this [also] sets Android header color-->
 
 </head>
 
@@ -67,7 +67,7 @@
 
     </div>
 
-    <!--Minimize nav and intro bars-->
+    <!--Highlight nav bar-->
     <script>
 		var $home_nav = $( '#home-nav' );
         var $about_nav = $( '#about-nav' );
@@ -84,20 +84,21 @@
 					$home_nav.attr('class', 'active');
                     $about_nav.attr('class', '');                   
 				}
-			}, { offset: '25%' } );
+			}, { offset: '20%' } );
 		} );
 
         $( '.skills-waypoint' ).each( function(i) {
 			var $el = $( this );
 			$el.waypoint( function( direction ) {
 				if( direction === 'down') {
-                    $about_nav.attr('class', '');
+                    $about_nav.attr('class', '');     
                     $skills_nav.attr('class', 'active');
 				}
 				else if( direction === 'up') {
+                    $about_nav.attr('class', 'active');
 					$skills_nav.attr('class', '');   
 				}
-			}, { offset: '25%' } );
+			}, { offset: '20%' } );
 		} );
     </script>
 
