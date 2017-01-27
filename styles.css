@@ -78,7 +78,11 @@ p, ul {
 
 #skills-section {
     height: 35em;
-    transition: .3s height;
+    -webkit-transition: height .3s;
+    -moz-transition: height .3s;
+    -ms-transition: height .3s;
+    -o-transition: height .3s;
+    transition: height .3s;
 }
 
 .skills-heading {
