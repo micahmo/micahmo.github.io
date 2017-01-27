@@ -1,3 +1,11 @@
+/*pad the anchor positions*/
+a.anchor {
+    display: block;
+    position: relative;
+    top: -5em;
+    visibility: hidden;
+}
+
 body {
     padding: 0em;
     margin: 0em;    
@@ -21,10 +29,11 @@ h3 {
     font-family: 'Montserrat', sans-serif;
 }
 
-p {
+p, ul {
     color: #00002B;
     font-family: 'Montserrat', sans-serif;
 }
+
 
 /* main content */
 .content {
@@ -33,6 +42,12 @@ p {
 .content h1 {
     color: #0F628E;
 }
+
+.content h2 {
+    color: #B76D68;
+    text-align: center;
+}
+
 .content #logo {
     padding: .5em;
     width: 25%;
@@ -61,6 +76,223 @@ p {
     background-color: #D2D2D2;
 }
 
+#skills-section {
+    height: 35em;
+    transition: .3s height;
+}
+
+.skills-heading {
+    transition: .3s color;
+    transition: .3s font-size;
+    cursor: pointer;
+}
+
+#languages-heading:hover, #ides-heading:hover, #oss-heading:hover, #misc-heading:hover {
+    color: #B76D68;
+}
+
+/* initial 'inactive' headings */
+#ides-heading, #oss-heading, #misc-heading {
+    color: gray;
+}
+
+#skills-table {
+    margin-top: -3em;
+}
+
+.skills-div {
+    transition: .3s opacity;
+}
+
+#ide-skills, #os-skills, #misc-skills {
+    opacity: 0;    
+}
+
+#ide-skills {
+    margin-top: -25em;
+}
+
+#os-skills {
+    margin-top: -7.5em;
+}
+
+#misc-skills {
+    margin-top: -7.5em;
+}
+
+.logos td {
+    padding-top: 2em;
+}
+
+.logos img {
+    display: block;
+    margin: auto;
+    height: 5em;
+}
+
+/*image size exceptions*/
+.logos #bash {
+    height: 3.5em;
+}
+
+.logos #python {
+    height: 7em;
+}
+
+.logos #arm {
+    height: 2.5em;
+}
+
+.logos #windows {
+    height: 6.5em;
+}
+
+.logos #android {
+    height: 3em;
+}
+
+.logos #vmware {
+    height: 3em;
+}
+
+.job-container {
+    display: flex;
+    margin-left: -15em;
+    margin-right: -15em;
+}
+
+.job-container h1 {
+    color: white;
+    text-align: center;
+}
+
+.job-container h2 {
+    color: white;
+    text-align: center;
+    margin: -1em;
+}
+
+.job-container ul {
+    color: #BCD8C1;
+    padding-top: 3em;
+}
+
+.job-container li {
+    margin: 0 0 .5em 0; /*space between items*/
+}
+
+.bju-job {
+    background-image: url('images/bju.jpg');
+    background-position: center;
+    background-size: 100% auto;
+    width: 50%;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    padding-bottom: 6em;
+    padding-left: 5em;
+    padding-right: 5em;
+    transition: .3s background-size;
+}
+
+.bju-job:hover {
+    background-size: 110% auto;
+}
+
+.tyco-job {
+    background-image: url('images/bldg.jpg');
+    background-position: center;
+    background-size: 100% auto;
+    flex-grow: 1;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    padding-left: 5em;
+    padding-right: 5em;
+    transition: .3s background-size;
+}
+
+.tyco-job:hover {
+    background-size: 110% auto;
+}
+
+.footer {
+    padding-top: 2em;
+    padding-bottom: .5em;
+    background-image: url('images/bkg2.jpg');
+}
+
+.footer h1 {
+    color: #BCD8C1;
+    text-align: center;
+}
+
+.footer td {
+    text-align: center;
+}
+
+.footer p {
+    color: white; 
+}
+
+.footer img {
+    height: 5em;
+    padding-right: 1em;
+}
+
+.footer .copyright {
+    color: #BCD8C1;
+    font-size: .75em;
+    text-align: center;
+}
+
+
+/*tooltip stuff*/
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    opacity: 0;
+    width: 6em;
+    background-color: #BCD8C1;
+    color: black;
+    text-align: center;
+    padding: 1em;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    /*z-index: 1;*/
+    left: -20%;
+
+    transition: .3s opacity;
+}
+
+.tooltiptext p {
+    color: #222E50;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #BCD8C1 transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    opacity: 1;
+}
+
+
+
+
+
+
 /* Nav bar stuff */
 .nav {
     position: fixed;
@@ -71,7 +303,7 @@ p {
 
 .nav ul {
     list-style: none;
-    background-color: #444;
+    background-color: #222E50;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -85,7 +317,7 @@ p {
 }
 .nav a {
     text-decoration: none;
-    color: gray;
+    color: #BCD8C1;
     display: block;
     transition: .3s background-color;
 }
@@ -95,6 +327,7 @@ p {
 }
 .nav a.active {
     color: white;
+    background-color: #0F628E;
     cursor: default;
     transition: .5s color;
 }

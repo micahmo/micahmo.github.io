@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/waypoints.min.js"></script>
+    <script src="js/smooth_scroll.js"></script>
+    <script src="js/div_slide.js"></script>
 
     <!--Icon Stuff-->
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
@@ -24,13 +26,15 @@
     
     
     <header>
+        <a name="home"/> <!-- for scrolling-->
         <div id="nav" class="nav maximized-nav">
             <ul>
-                <li class="home"><a id="home-nav" class="active" href="#">Home</a></li>
+                <li class="home"><a id="home-nav" class="active" href="#home">Home</a></li>
                 <li class="about"><a id="about-nav" href="#about">About</a></li>
                 <li class="skills"><a id="skills-nav" href="#skills">Skills</a></li>
-                <li class="experience"><a id="experience-nav" href="#">Experience</a></li>
-                <li class="contact"><a id="contact-nav" href="#">Contact</a></li>
+                <li class="experience"><a id="experience-nav" href="#experience">Experience</a></li>
+                <li class="education"><a id="education-nav" href="#education">Education</a></li>
+                <li class="contact"><a id="contact-nav" href="#contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -43,26 +47,179 @@
             <img id="profile" src="images/profile_round.png" align="right"/>
             
             <section class="about-waypoint"/>
-            <a name="about"/>
+            <a class="anchor" name="about"/></a>
             <h1>About</h1>
             <p>I am a hardworking, detail-oriented problem solver. My rigorous organization skills allow me to maximize my time, prioritize my work, and get things done. My attention to detail forces me to examine every aspect of a problem until I have created the optimal solution. I have excellent written and oral communication skills and thrive on teamwork.
             </p>
         </div>
 
-        <div class="section-dark">
+        <div class="section-dark" id="skills-section">
             <section class="skills-waypoint"/>
-            <a name="skills"/>
+            <a class="anchor" name="skills"/></a>
             <h1>Skills</h1>
 
+            <table id="skills-table" width="65%" align="center">
+                <tr>
+                    <td class="skills-td" width="25%"><h2 class="skills-heading" id="languages-heading" >Languages</h2></td>
+                    <td class="skills-td" width="25%"><h2 class="skills-heading" id="ides-heading" >IDEs</h2></td>
+                    <td class="skills-td" width="25%"><h2 class="skills-heading" id="oss-heading" >OSs</h2></td>
+                    <td class="skills-td" width="25%"><h2 class="skills-heading" id="misc-heading" >Miscellaneous</h2></td>
+                </tr>
+            </table>
+
+            <div id="skills-container">
+                <div id="language-skills" class="skills-div">
+                    <table width="100%" class="logos">
+                        <tr>
+                            <td width="33%"><img class="logo" src="images/vb.png"/></td>
+                            <td width="33%"><img class="logo" src="images/cs.png"/></td>
+                            <td width="33%"><img class="logo" src="images/c++.jpeg"/></td>
+                        </tr>
+                        <tr>
+                            <td width="33%"><img class="logo" id="bash" src="images/bash.png"/></td>
+                            <td width="33%"><img class="logo" id="python" src="images/python.png"/></td>
+                            <td width="33%"><img class="logo" src="images/java.png"/></td>
+                        </tr>
+                        <tr>
+                            <td width="33%"><img class="logo" src="images/x86.png"/></td>
+                            <td width="33%"><img class="logo" id="arm" src="images/arm.png"/></td>
+                            <td width="33%"><img class="logo" src="images/sql.png"/></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div id="ide-skills" class="skills-div">
+                    <table width="100%" class="logos" id="ides">
+                        <tr>
+                            <td width="25%"><img class="logo" src="images/vs.png"/></td>
+                            <td width="25%"><img class="logo" src="images/qt.png"/></td>
+                            <td width="25%"><img class="logo" src="images/ij.png"/></td>
+                            <td width="25%"><img class="logo" src="images/pc.png"/></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="os-skills" class="skills-div">
+                    <table width="100%" class="logos" id="oss">
+                        <tr>
+                            <td width="33%"><img class="logo" id="windows" src="images/windows.png"/></td>
+                            <td width="33%"><img class="logo" src="images/linux.png"/></td>
+                            <td width="33%"><img class="logo" id="android" src="images/android.png"/></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="misc-skills" class="skills-div">
+                    <table width="100%" class="logos" id="misc">
+                        <tr>
+                            <td width="33%"><img class="logo" src="images/office.png"/></td>
+                            <td width="33%"><img class="logo" src="images/ssms.png"/></td>
+                            <td width="33%"><img class="logo" id="vmware" src="images/vmware.png"/></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="section-light">
+            <section class="experience-waypoint"/>
+            <a class="anchor" name="experience"/></a>
+            <h1>Experience</h1>
+
+            <div class="job-container">
+                <div class="bju-job">
+                    <h1>Bob Jones University</h1>
+                    <h2>Technology Assistant</h2>
+                    <ul>
+                        <li>monitored student activity in computer labs</li>
+                        <li>assisted fellow students with computer science assignments</li>
+                    </ul>
+                </div>
+                <div class="tyco-job">
+                    <h1>Tyco</h1>
+                    <h2>Software Engineering Intern</h2>
+                        <ul>
+                            <li>worked closely with developers to understand current use cases, capacity, and methodologies</li>
+                            <li>researched new smart card technologies</li>
+                            <li>developed and demonstrated proof of concepts for reading and writing smart cards</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-dark">
+            <section class="education-waypoint"/>
+            <a class="anchor" name="education"/></a>
+            <h1>Education</h1>
+
+
+            <p>Cras vehicula nisi eget quam tempor porttitor. Morbi posuere quam tellus, et eleifend ligula varius ac. Vivamus id sollicitudin augue, ut pellentesque purus. Nulla facilisi. Nam lobortis sit amet mi at faucibus. Donec aliquet metus eu ipsum laoreet lobortis. Suspendisse imperdiet hendrerit libero nec sagittis. Nullam gravida ultricies cursus.
+
+            Phasellus semper, purus non maximus accumsan, diam lorem tempus massa, vel dignissim nulla nisl eu nibh. Phasellus tempus ipsum leo, in dictum ligula malesuada dapibus. Aliquam eget odio in massa lacinia volutpat quis quis nunc. Duis maximus purus quis viverra laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed maximus dui in cursus dapibus. Nulla sollicitudin urna in dolor rhoncus, vitae rutrum diam aliquet. Etiam accumsan augue eget sapien maximus efficitur. Etiam facilisis arcu vel ultricies sollicitudin. Cras in orci et dolor gravida venenatis. Sed eu ante scelerisque, posuere elit in, interdum risus. Mauris nec ultrices ligula.
+            </p>
+            <p>Cras vehicula nisi eget quam tempor porttitor. Morbi posuere quam tellus, et eleifend ligula varius ac. Vivamus id sollicitudin augue, ut pellentesque purus. Nulla facilisi. Nam lobortis sit amet mi at faucibus. Donec aliquet metus eu ipsum laoreet lobortis. Suspendisse imperdiet hendrerit libero nec sagittis. Nullam gravida ultricies cursus.
+
+            Phasellus semper, purus non maximus accumsan, diam lorem tempus massa, vel dignissim nulla nisl eu nibh. Phasellus tempus ipsum leo, in dictum ligula malesuada dapibus. Aliquam eget odio in massa lacinia volutpat quis quis nunc. Duis maximus purus quis viverra laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed maximus dui in cursus dapibus. Nulla sollicitudin urna in dolor rhoncus, vitae rutrum diam aliquet. Etiam accumsan augue eget sapien maximus efficitur. Etiam facilisis arcu vel ultricies sollicitudin. Cras in orci et dolor gravida venenatis. Sed eu ante scelerisque, posuere elit in, interdum risus. Mauris nec ultrices ligula.
+            </p>
+            <p>Cras vehicula nisi eget quam tempor porttitor. Morbi posuere quam tellus, et eleifend ligula varius ac. Vivamus id sollicitudin augue, ut pellentesque purus. Nulla facilisi. Nam lobortis sit amet mi at faucibus. Donec aliquet metus eu ipsum laoreet lobortis. Suspendisse imperdiet hendrerit libero nec sagittis. Nullam gravida ultricies cursus.
+
+            Phasellus semper, purus non maximus accumsan, diam lorem tempus massa, vel dignissim nulla nisl eu nibh. Phasellus tempus ipsum leo, in dictum ligula malesuada dapibus. Aliquam eget odio in massa lacinia volutpat quis quis nunc. Duis maximus purus quis viverra laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed maximus dui in cursus dapibus. Nulla sollicitudin urna in dolor rhoncus, vitae rutrum diam aliquet. Etiam accumsan augue eget sapien maximus efficitur. Etiam facilisis arcu vel ultricies sollicitudin. Cras in orci et dolor gravida venenatis. Sed eu ante scelerisque, posuere elit in, interdum risus. Mauris nec ultrices ligula.
+            </p>
             <p>Cras vehicula nisi eget quam tempor porttitor. Morbi posuere quam tellus, et eleifend ligula varius ac. Vivamus id sollicitudin augue, ut pellentesque purus. Nulla facilisi. Nam lobortis sit amet mi at faucibus. Donec aliquet metus eu ipsum laoreet lobortis. Suspendisse imperdiet hendrerit libero nec sagittis. Nullam gravida ultricies cursus.
 
             Phasellus semper, purus non maximus accumsan, diam lorem tempus massa, vel dignissim nulla nisl eu nibh. Phasellus tempus ipsum leo, in dictum ligula malesuada dapibus. Aliquam eget odio in massa lacinia volutpat quis quis nunc. Duis maximus purus quis viverra laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed maximus dui in cursus dapibus. Nulla sollicitudin urna in dolor rhoncus, vitae rutrum diam aliquet. Etiam accumsan augue eget sapien maximus efficitur. Etiam facilisis arcu vel ultricies sollicitudin. Cras in orci et dolor gravida venenatis. Sed eu ante scelerisque, posuere elit in, interdum risus. Mauris nec ultrices ligula.
             </p>
         </div>
 
-        <div class="section-light">
-            <p>Nulla finibus dignissim risus ac tempor. Ut condimentum metus nec rhoncus fermentum. Aenean scelerisque lacinia justo at mattis. Vivamus eu facilisis massa. Nam sollicitudin suscipit magna nec condimentum. Nulla blandit semper lorem vitae viverra. Duis lobortis ut mauris eget condimentum. Praesent sagittis lacinia mi, sit amet dignissim mi condimentum et. Nunc ut rutrum sem. Nam augue nunc, viverra sed eleifend quis, consequat consectetur metus. In scelerisque suscipit nisl, eu eleifend turpis vestibulum eu. Nullam suscipit massa at consequat euismod. Aliquam et leo porta, volutpat dolor eget, egestas arcu. Quisque ut magna a mauris finibus semper et in nunc. Nunc a ante urna.
-            </p>
+        <div class="footer">
+            <h1>Contact Me</h1>
+            <section class="contact-waypoint"/>
+            <a class="anchor" name="contact"/></a>
+
+            <table width="35%" align="center">
+                <tr>
+                    <td width="10%">
+                        <div class="tooltip">
+                            <img src="images/phone.png">
+                            <span class="tooltiptext"><p><a href="tel:978-503-1211" target="_blank">Give me a call</a></p></span> <!-- &#8209; is non-breaking hyphen -->
+                        </div>
+                    </td>
+                    
+                    <td width="10%">
+                        <div class="tooltip">
+                            <img src="images/email.png">
+                            <span class="tooltiptext"><p><a href="mailto:micahmorrison95@gmail.com">Send me an email</a></p></span>    
+                        </div>
+                    </td>
+                    
+                    <td width="10%">
+                        <div class="tooltip">
+                            <img src="images/in.png">
+                            <span class="tooltiptext"><p><a href="http://linkedin.com/in/micahmo" target="_blank">Connect on LinkedIn</a></p></span>    
+                        </div>
+                    </td>
+                    
+                    <td width="10%">
+                        <div class="tooltip">
+                            <img src="images/resume.png">
+                            <span class="tooltiptext"><p><a href="doc/MicahMorrison.pdf" target="_blank">Download my resume</a></p></span>    
+                        </div>
+                    </td>
+                    
+                    <td width="10%">
+                        <div class="tooltip">
+                            <img src="images/github.png">
+                            <span class="tooltiptext"><p><a href="http://github.com/micahmo" target="_blank">Check out my GitHub</a></p></span>    
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+            </br></br></br></br>
+            <p class="copyright">© 2017 Micah Morrison. All Rights Reserved.</p>
         </div>
 
     </div>
@@ -72,7 +229,10 @@
 		var $home_nav = $( '#home-nav' );
         var $about_nav = $( '#about-nav' );
         var $skills_nav = $( '#skills-nav' );
-        // var $nav = $( '#nav' );
+        var $experience_nav = $( '#experience-nav' );   
+        var $education_nav = $ ( '#education-nav' );
+        var $contact_nav = $ ( '#contact-nav' );
+        var $last_active = false;
 		$( '.about-waypoint' ).each( function(i) {
 			var $el = $( this );
 			$el.waypoint( function( direction ) {
@@ -100,6 +260,91 @@
 				}
 			}, { offset: '20%' } );
 		} );
+
+        $( '.experience-waypoint' ).each( function(i) {
+			var $el = $( this );
+			$el.waypoint( function( direction ) {
+                if( direction === 'down' ) {
+                    $skills_nav.attr('class', '');     
+                    $experience_nav.attr('class', 'active');
+				}
+                else if( direction === 'up' ) {
+                    $skills_nav.attr('class', 'active');
+					$experience_nav.attr('class', '');   
+				}
+			}, { offset: '20%' } );
+		} );
+
+        $( '.education-waypoint' ).each( function(i) {  // MAKE SURE THIS IS ALWAYS THE LAST ONE
+			var $el = $( this );
+			$el.waypoint( function( direction ) {
+                if( direction === 'down' ) {
+                    $experience_nav.attr('class', '');     
+                    $education_nav.attr('class', 'active');
+                    $last_active = true;
+				}
+                else if( direction === 'up' ) {
+                    $experience_nav.attr('class', 'active');
+					$education_nav.attr('class', '');   
+                    $last_active = false;
+				}
+			}, { offset: '20%' } );
+		} );
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+                $education_nav.attr('class', '');     
+                $contact_nav.attr('class', 'active');
+            } else {
+                $contact_nav.attr('class', '');
+                if ($last_active) {
+                    $education_nav.attr('class', 'active');
+                }
+            }
+        } );
+    </script>
+
+
+    <!-- animate skills section -->
+    <script>
+        $('.skills-heading').click(function() {
+            $('.skills-heading').each(function() {
+                $(this).css("color", "gray");
+            });
+            $(this).css("color", "#B76D68");
+        });
+
+        $('#languages-heading').click(function() {
+            $('.skills-div').each(function() {
+                $(this).css("opacity", "0");
+            });
+            $('#language-skills').css("opacity", "1");
+            $('#skills-section').css("height", "35em");
+        });
+
+        $('#ides-heading').click(function() {
+            $('.skills-div').each(function() {
+                $(this).css("opacity", "0");
+            });    
+            $('#ide-skills').css("opacity", "1");
+            $('#skills-section').css("height", "20em");
+        });
+
+        $('#oss-heading').click(function() {
+            $('.skills-div').each(function() {
+                $(this).css("opacity", "0");
+            });    
+            $('#os-skills').css("opacity", "1");
+            $('#skills-section').css("height", "20em");
+        });
+
+        $('#misc-heading').click(function() {
+            $('.skills-div').each(function() {
+                $(this).css("opacity", "0");
+            });    
+            $('#misc-skills').css("opacity", "1");
+            $('#skills-section').css("height", "20em");
+        });
     </script>
 
 
